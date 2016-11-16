@@ -169,7 +169,7 @@ function createCluster(x, y, numPoints, id) {
 
 function createPointCluster(p, i) {
     var coords = p.geometry.coordinates;
-    return createCluster(lngX(coords[0]), latY(coords[1]), 1, i);
+    return createCluster(lngX(coords[0]), latY(coords[1]), (p.properties && p.properties.point_count) || 1, i);
 }
 
 function getClusterJSON(cluster) {
